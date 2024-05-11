@@ -43,6 +43,8 @@ const Sidebar = () => {
   useEffect(() => {
     if(width && isMobile) {
       setSidebarVisible(false);
+    } else {
+      setSidebarVisible(true);
     }
   },[width])
 

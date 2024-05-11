@@ -8,7 +8,7 @@ interface AppContextInterface {
 }
 
 const defaultAppContext: AppContextInterface = {
-  isSidebarVisible: true,
+  isSidebarVisible: false,
   setSidebarVisible: () => true,
 };
 
@@ -16,7 +16,7 @@ export const AppContext =
   React.createContext<AppContextInterface>(defaultAppContext);
 
 const AppProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
-  const [isSidebarVisible, setSidebarVisible] = useState<boolean>(true);
+  const [isSidebarVisible, setSidebarVisible] = useState<boolean>(false);
 
   return (
     <AppContext.Provider value={{ isSidebarVisible, setSidebarVisible }}>
