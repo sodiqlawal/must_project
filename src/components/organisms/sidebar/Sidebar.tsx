@@ -4,7 +4,7 @@ import { MENU_LINKS } from '@/constants/sidebar';
 import Link from 'next/link';
 import styles from './Sidebar.module.scss';
 import { FaChevronDown } from 'react-icons/fa';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import cx from 'classnames';
 import { FaChevronRight } from 'react-icons/fa';
@@ -12,6 +12,7 @@ import { AppContext } from '@/contexts/AppContext';
 import { AiFillCloseSquare } from "react-icons/ai";
 import Image from 'next/image';
 import Search from '@/components/molecules/search/Search';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const getIsActiveMenu = (pathname: string, menuUrl: string) => {
   return pathname === menuUrl;
@@ -21,6 +22,9 @@ const Sidebar = () => {
   const [selectedMenuId, setMenuId] = useState('');
   const { isSidebarVisible, setSidebarVisible } = useContext(AppContext);
   const pathname = usePathname();
+  const [width] = useWindowSize();
+
+  const isMobile = width <= 763;
 
   const handleMenuIdChange = (id: string) => {
     if (selectedMenuId === id) {
@@ -30,9 +34,17 @@ const Sidebar = () => {
     }
   };
 
-  const handleSidebarClose = () => {
-    setSidebarVisible(false)
+  const handleCloseSidebarOnClick = () => {
+    if(isMobile) {
+      setSidebarVisible(false);
+    }
   }
+
+  useEffect(() => {
+    if(width && isMobile) {
+      setSidebarVisible(false);
+    }
+  },[width])
 
   return (
     <aside
@@ -64,7 +76,7 @@ const Sidebar = () => {
         <Button
           w='40px'
           h='40px'
-          onClick={handleSidebarClose}
+          onClick={() => setSidebarVisible(false)}
           isTransparent
         >
           <AiFillCloseSquare size={30} />
@@ -83,7 +95,7 @@ const Sidebar = () => {
               className={cx(styles.link_cover, {
                 [styles.active]: getIsActiveMenu(pathname, link.url),
               })}
-              onClick={handleSidebarClose}
+              onClick={handleCloseSidebarOnClick}
             >
               <Link href={link.url}>
                 <div
@@ -119,7 +131,7 @@ const Sidebar = () => {
                 <div
                   key={sublink.id}
                   className={styles.sublink_cover}
-                  onClick={handleSidebarClose}
+                  onClick={handleCloseSidebarOnClick}
                 >
                   <Link href={sublink.url}>
                     <div className={styles.sublink}>
