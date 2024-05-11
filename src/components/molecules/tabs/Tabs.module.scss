@@ -1,0 +1,25 @@
+@import '@/stylesheets/colors.scss';
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $blue-five;
+    width: 100%;
+    overflow: auto;
+
+    .tab {
+        border-radius: 8px, 0px, 0px, 8px;
+        padding: 10px;
+        gap: 10px;
+        color: $grey-three;
+        font-weight: 500;
+        min-width: 125px;
+        cursor: pointer;
+    }
+
+    .active {
+        background-color: $blue-one;
+        color: $white;
+    }
+}

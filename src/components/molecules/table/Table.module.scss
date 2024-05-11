@@ -1,0 +1,131 @@
+@import '@/stylesheets/colors.scss';
+
+.table_container {
+  min-height: 200px;
+  width: 100%;
+  border-radius: 10px;
+  color: $dark-four;
+  position: relative;
+  background-color: $white;
+  overflow: auto;
+
+  table {
+    border: none;
+    width: 100%;
+  }
+
+  .table_min_height {
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+      font-size: 18px;
+      font-weight: 500;
+      color: $grey-seven;
+    }
+  }
+
+  .table_container_after {
+    padding-bottom: 10px;
+  }
+
+  .d_none {
+    display: none;
+  }
+  td,
+  th {
+    white-space: nowrap;
+  }
+  thead {
+    border-bottom: 1px solid $grey-nine;
+    background-color: $blue-nine;
+    font-weight: 600;
+
+    th {
+      height: 60px;
+      padding: 16px;
+
+      &:first-child {
+        min-width: 30px;
+      }
+    }
+  }
+
+  tbody {
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    position: relative;
+
+    tr {
+      line-height: 18px;
+      height: 40px;
+      transition: all 0.2s ease;
+
+      &:nth-child(even) {
+        background-color: $grey-eight;
+      }
+      &.selected {
+        background-color: $dark-five;
+      }
+    }
+
+    td {
+      height: 40px;
+      padding: 16px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+  }
+
+  .check_btn_cover {
+    display: flex;
+    justify-content: center;
+    .check_btn {
+      border: 1px solid $grey-five;
+      background: $grey-five;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .white {
+      background: $white;
+    }
+
+    .primary {
+      background: $blue-one;
+    }
+  }
+
+  .white_color {
+    color: $white;
+  }
+
+  .primary_color {
+    color: $blue-one;
+  }
+
+  .check_icon {
+    display: none;
+
+    &.visible {
+      display: block;
+    }
+  }
+
+  .square_icon {
+    display: none;
+
+    &.visible {
+      display: block;
+    }
+  }
+}

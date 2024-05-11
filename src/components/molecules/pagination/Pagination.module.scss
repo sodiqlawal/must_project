@@ -1,0 +1,48 @@
+@import '@/stylesheets/colors.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 16px 0;
+  padding: 20px 0;
+  background-color: $grey-ten;
+  overflow: auto;
+
+  .pages {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    button {
+      font-size: 16px;
+      color: $grey-seven;
+      transition: all 0.2s ease;
+
+      &.active {
+        color: $white;
+        font-size: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 763px) {
+    .pages {
+      gap: 10px;
+
+      button {
+        font-size: 14px;
+        width: 30px !important;
+        height: 30px !important;
+
+        &.active {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    justify-content: unset;
+  }
+}

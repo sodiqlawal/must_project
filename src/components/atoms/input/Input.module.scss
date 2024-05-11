@@ -1,0 +1,38 @@
+@import '@/stylesheets/colors.scss';
+
+.container {
+  position: relative;
+
+  &.is_pre_icon {
+  }
+
+  .pre_icon {
+    position: absolute;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  input {
+    height: 45px;
+    padding: 7px 11px;
+    border-radius: 10px;
+    border: 1px solid $grey-four;
+    background-color: $white;
+    transition: all 0.2s;
+    padding-left: 50px;
+    outline: 0;
+
+    &:focus{
+        font-size: 14px;
+        border-color: #414f66;
+        box-shadow: 0 0 0 2px rgba(3, 12, 23, 0.44);
+        border-inline-end-width: 1px;
+    }
+
+    &::placeholder {
+        color: $grey-four;
+    }
+  }
+}

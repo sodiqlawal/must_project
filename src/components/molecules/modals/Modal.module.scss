@@ -1,0 +1,74 @@
+@import '@/stylesheets/colors.scss';
+
+.modal {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($black, 0.4);
+
+  .paper {
+    min-width: 400px;
+    max-width: 600px;
+    max-height: 90%;
+    min-height: 198px;
+    background-color: $white;
+    box-shadow: $shadow-three;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .close {
+    cursor: pointer;
+  }
+
+  .children {
+    padding: 24px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 24px 0;
+
+    svg {
+      color: $dark-three;
+    }
+  }
+}
+.success_content {
+  p {
+    margin-bottom: 32px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// media query
+@media (max-width: 768px) {
+  .modal {
+    .paper {
+      margin: 0 10px;
+      min-width: 90%;
+    }
+
+    .header {
+      padding: 20px;
+    }
+
+    h4 {
+      font-size: 14px;
+    }
+  }
+}

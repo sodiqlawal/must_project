@@ -1,0 +1,36 @@
+// style guide colors
+$white: #fff;
+$grey-one: rgb(163, 163, 163);
+$grey-two: #e5e5e5;
+$grey-three: #b1b4bb;
+$grey-four: #d9d9d9;
+$grey-five: #d7d8da;
+$grey-six: #5a616a;
+$grey-seven: #a1a1a1;
+$grey-eight: #f9f9fb;
+$grey-nine: #f0f0f0;
+$grey-ten: #f1f3f5;
+$black: #000;
+$dark-one: #0b101a;
+$dark-two: rgb(42, 57, 88);
+$dark-three: #6f80a0;
+$dark-four: #222222;
+$dark-five: #909499;
+$blue-one: #2a3958;
+$blue-five: #ebeef3;
+$blue-nine: #eef0f4;
+$danger-one: #ff4d4f;
+$danger-two: #991b1b;
+$danger-three: #9a3412;
+$danger-five: #fee2e2;
+$pending-five: #ffedd5;
+$green-one: #166534;
+$green-five: #dcfce7;
+
+// shadow
+$shadow-one: 0 0 0 0 transparent, 0 0 0 0 transparent,
+  0 0 1px 0 rgba(40, 60, 61, 0.08), 0 0.5px 2px 0 rgba(97, 111, 112, 0.16);
+$shadow-two: 0 0 0 0 transparent, 0 0 0 0 transparent,
+  0 3.5px 5.5px 0 rgba(41, 57, 88, 0.16);
+$shadow-three: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+  0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);

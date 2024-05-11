@@ -1,0 +1,30 @@
+@import '@/stylesheets/colors.scss';
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+
+  &.transparent {
+    background-color: transparent;
+    border: none;
+  }
+
+  &.outline {
+    border: 1px solid $grey-four;
+    background-color: $white;
+  }
+
+  &.primary {
+    background-color: $blue-one;
+    border: none;
+    color: $white;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+}

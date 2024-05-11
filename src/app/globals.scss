@@ -1,0 +1,57 @@
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255 255 255;
+
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.layout-container {
+  height: 100vh;
+}
+
+.sidebar-page_container {
+  display: flex;
+}
+
+.page {
+  padding: 110px 30px 30px;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+}
+
+
+@media (max-width: 763px) {
+  .page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

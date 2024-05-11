@@ -1,0 +1,63 @@
+@import '@/stylesheets/colors.scss';
+
+.container {
+  position: relative;
+
+  .field {
+    padding: 10px 12px 10px 12px;
+    border-radius: 8px;
+    border: 1px solid $grey-three;
+    gap: 8px;
+    cursor: pointer;
+    min-width: 150px;
+    height: 39px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+        color: $grey-four;
+    }
+
+    p {
+      color: $dark-one;
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    z-index: 1000;
+    top: 45px;
+    width: 100%;
+    background-color: $white;
+    max-height: 400px;
+    overflow: auto;
+    box-shadow: $shadow-three;
+    border-radius: 8px;
+    transition: all 0.1s ease-in-out;
+    visibility: hidden;
+    transform: translateY(-2%);
+
+    &.active {
+      visibility: visible;
+      transform: translateY(0%);
+    }
+
+    .option {
+      gap: 10px;
+      padding: 6px 46px 6px 16px;
+      font-weight: 400;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: $blue-one;
+      font-weight: 500;
+
+      p {
+        color: $white !important;
+      }
+    }
+  }
+}
