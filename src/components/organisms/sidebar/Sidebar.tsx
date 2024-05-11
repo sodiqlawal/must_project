@@ -30,6 +30,10 @@ const Sidebar = () => {
     }
   };
 
+  const handleSidebarClose = () => {
+    setSidebarVisible(false)
+  }
+
   return (
     <aside
       className={cx(styles.container, {
@@ -60,7 +64,7 @@ const Sidebar = () => {
         <Button
           w='40px'
           h='40px'
-          onClick={() => setSidebarVisible(false)}
+          onClick={handleSidebarClose}
           isTransparent
         >
           <AiFillCloseSquare size={30} />
@@ -79,6 +83,7 @@ const Sidebar = () => {
               className={cx(styles.link_cover, {
                 [styles.active]: getIsActiveMenu(pathname, link.url),
               })}
+              onClick={handleSidebarClose}
             >
               <Link href={link.url}>
                 <div
@@ -114,6 +119,7 @@ const Sidebar = () => {
                 <div
                   key={sublink.id}
                   className={styles.sublink_cover}
+                  onClick={handleSidebarClose}
                 >
                   <Link href={sublink.url}>
                     <div className={styles.sublink}>

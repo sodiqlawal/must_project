@@ -20,6 +20,10 @@
 
     .menu_icon {
       display: none;
+
+      svg {
+        color: $dark-one;
+      }
     }
 
     .left_left_section {
