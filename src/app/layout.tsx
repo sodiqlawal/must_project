@@ -20,7 +20,7 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Must Test',
+  title: 'MUST Company Test',
   description: 'Test for CSS',
 };
 
