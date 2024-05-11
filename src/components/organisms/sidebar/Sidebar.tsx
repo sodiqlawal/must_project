@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 import cx from 'classnames';
 import { FaChevronRight } from 'react-icons/fa';
 import { AppContext } from '@/contexts/AppContext';
-import { AiFillCloseSquare } from "react-icons/ai";
+import { AiFillCloseSquare } from 'react-icons/ai';
 import Image from 'next/image';
 import Search from '@/components/molecules/search/Search';
 import useWindowSize from '@/hooks/useWindowSize';
@@ -35,18 +35,18 @@ const Sidebar = () => {
   };
 
   const handleCloseSidebarOnClick = () => {
-    if(isMobile) {
+    if (isMobile) {
       setSidebarVisible(false);
     }
-  }
+  };
 
   useEffect(() => {
-    if(width && isMobile) {
+    if (width && isMobile) {
       setSidebarVisible(false);
     } else {
       setSidebarVisible(true);
     }
-  },[width])
+  }, [width]);
 
   return (
     <aside
@@ -97,9 +97,11 @@ const Sidebar = () => {
               className={cx(styles.link_cover, {
                 [styles.active]: getIsActiveMenu(pathname, link.url),
               })}
-              onClick={handleCloseSidebarOnClick}
             >
-              <Link href={link.url}>
+              <Link
+                href={link.url}
+                onClick={handleCloseSidebarOnClick}
+              >
                 <div
                   className={cx(styles.link, {
                     [styles.active]: getIsActiveMenu(pathname, link.url),
@@ -129,7 +131,7 @@ const Sidebar = () => {
                 [styles.invisible]: !link?.subLinks || !selectedMenuId,
               })}
             >
-              {link.subLinks?.map((sublink,i) => (
+              {link.subLinks?.map((sublink, i) => (
                 <div
                   key={sublink.id}
                   className={styles.sublink_cover}
