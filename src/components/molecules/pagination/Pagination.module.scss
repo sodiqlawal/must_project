@@ -19,6 +19,7 @@
       font-size: 16px;
       color: $grey-seven;
       transition: all 0.2s ease;
+      min-width: 30px;
 
       &.active {
         color: $white;
@@ -30,6 +31,7 @@
   @media (max-width: 763px) {
     .pages {
       gap: 10px;
+      overflow: auto;
 
       button {
         font-size: 14px;
@@ -41,8 +43,5 @@
         }
       }
     }
-  }
-  @media (max-width: 500px) {
-    justify-content: unset;
   }
 }
